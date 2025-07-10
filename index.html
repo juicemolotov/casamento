@@ -51,30 +51,41 @@
       text-decoration: none;
       background-color: #c97c8d;
       color: white;
-      padding: 16px 36px; /* Aumentado */
-      border-radius: 10px; /* Leve aumento */
-      font-size: 1.4rem; /* Aumentado */
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-size: 1.4rem;
       font-weight: bold;
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Leve sombra mais forte */
-      transition: background-color 0.3s ease;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
       display: inline-block;
-      animation: piscar 1.5s infinite alternate;
+      animation: pulsar 2s infinite;
+      cursor: pointer;
+      user-select: none;
     }
 
     .botao-presente:hover {
       background-color: #a65f70;
-      animation-play-state: paused; /* Para não piscar no hover */
+      transform: scale(1.15);
+      animation-play-state: paused;
     }
 
-    @keyframes piscar {
-      0% {
-        opacity: 1;
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
       }
       50% {
-        opacity: 0.5;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes explodir {
+      0% {
+        transform: scale(1);
+        opacity: 1;
       }
       100% {
-        opacity: 1;
+        transform: scale(2.5);
+        opacity: 0;
       }
     }
 
@@ -108,7 +119,6 @@
       margin: 0 auto;
     }
 
-    /* Centraliza texto e botão na seção de presentes */
     .presentes {
       text-align: center;
     }
@@ -166,7 +176,7 @@
   </style>
 </head>
 <body>
-  <!-- Arabescos decorativos corrigidos -->
+  <!-- Arabescos decorativos -->
   <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo" />
   <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape" />
 
@@ -267,7 +277,25 @@
     }
     setInterval(countdown, 1000);
     countdown();
+
+    // Animação explode no clique do botão presente
+    document.querySelector('.botao-presente').addEventListener('click', function (e) {
+      e.preventDefault(); // para não abrir o link e ver só efeito
+
+      const botao = this;
+      botao.style.animation = 'explodir 0.4s forwards';
+      botao.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        // volta ao estado inicial
+        botao.style.animation = 'pulsar 2s infinite';
+        botao.style.opacity = '1';
+        botao.style.transform = 'scale(1)';
+        botao.style.pointerEvents = 'auto';
+      }, 600);
+    });
   </script>
 </body>
 </html>
+
 
