@@ -16,11 +16,11 @@
       position: relative;
     }
 
-    /* Arabescos fixos */
+    /* Arabescos posicionados corretamente */
     .arabesco-topo {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 300px;
       z-index: 0;
     }
@@ -28,9 +28,9 @@
     .arabesco-rodape {
       position: absolute;
       bottom: 0;
-      right: 0;
+      left: 0;
       width: 300px;
-      transform: scaleX(-1) scaleY(-1);
+      transform: scaleY(-1); /* apenas espelhamento vertical */
       z-index: 0;
     }
 
@@ -137,9 +137,9 @@
 </head>
 <body>
 
-  <!-- Arabescos decorativos -->
-  <img src="FLOR.png" alt="Arabesco Topo" class="arabesco-topo">
-  <img src="FLOR.png" alt="Arabesco Rodapé" class="arabesco-rodape">
+  <!-- Arabescos decorativos corrigidos -->
+  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo">
+  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
 
   <header>
     <h1>Gabriele & Matheus</h1>
@@ -212,3 +212,4 @@
   </script>
 </body>
 </html>
+
