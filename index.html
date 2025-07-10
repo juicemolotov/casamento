@@ -6,30 +6,48 @@
   <title>Gabriele & Matheus</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet">
   <style>
-  
     body {
-  margin: 0;
-  padding: 0;
-  background-image: url('textura-de-gesso-cartonado-sepia.jpg');
-  background-repeat: repeat; /* ou no-repeat se quiser usar uma só */
-  background-size: contain;    /* ou "contain" ou "auto" dependendo do efeito */
-  background-attachment: fixed; /* opcional - para fundo fixo */
+      margin: 0;
+      padding: 0;
+      background-image: url('textura-de-gesso-cartonado-sepia.jpg');
+      background-repeat: repeat;
+      background-size: contain;
+      background-attachment: fixed;
+      position: relative;
     }
+
+    /* Arabescos fixos */
+    .arabesco-topo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      z-index: 0;
+    }
+
+    .arabesco-rodape {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      transform: scaleX(-1) scaleY(-1);
+      z-index: 0;
+    }
+
     header {
       text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-image: url('fundo-floral.png'); /* topo floral */
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: contain;
+      padding: 4rem 1rem 2rem;
+      position: relative;
+      z-index: 1;
     }
+
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
       color: #8b2e2e;
     }
 
-       .botao-presente {
+    .botao-presente {
       text-decoration: none;
       background-color: #c97c8d;
       color: white;
@@ -40,28 +58,39 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s ease;
     }
+
+    .botao-presente:hover {
+      background-color: #a65f70;
+    }
+
     .convite-texto {
       max-width: 700px;
       margin: 0 auto;
       padding: 1rem;
       text-align: center;
       font-size: 1.2rem;
+      z-index: 1;
+      position: relative;
     }
+
     .data {
       font-weight: bold;
       font-size: 1.4rem;
       margin-top: 1rem;
     }
+
     .contagem {
       margin: 2rem 0;
       font-size: 1.5rem;
       text-align: center;
     }
+
     .rsvp, .presentes, .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
       margin: 0 auto;
     }
+
     input, select, textarea, button {
       width: 100%;
       margin: 0.5rem 0;
@@ -70,6 +99,7 @@
       font-family: 'Crimson Text', serif;
       box-sizing: border-box;
     }
+
     button {
       background-color: #8b2e2e;
       color: white;
@@ -77,16 +107,17 @@
       cursor: pointer;
       transition: background 0.2s;
     }
+
     button:hover, button:focus {
       background-color: #a84545;
     }
+
     footer {
-      background-image: url('fundo-floral.png'); /* fundo floral inferior */
-      background-repeat: no-repeat;
-      background-position: bottom center;
-      background-size: contain;
       padding: 4rem 0;
+      position: relative;
+      z-index: 1;
     }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2.1rem;
@@ -98,10 +129,18 @@
       .contagem {
         font-size: 1.1rem;
       }
+      .arabesco-topo, .arabesco-rodape {
+        width: 180px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Arabescos decorativos -->
+  <img src="FLOR.png" alt="Arabesco Topo" class="arabesco-topo">
+  <img src="FLOR.png" alt="Arabesco Rodapé" class="arabesco-rodape">
+
   <header>
     <h1>Gabriele & Matheus</h1>
   </header>
@@ -129,17 +168,15 @@
       </select>
       <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
       <button type="submit">Enviar confirmação</button>
-      <!-- Proteção contra spam -->
       <input type="hidden" name="_captcha" value="false">
     </form>
   </section>
 
   <section class="presentes">
     <h2>Lista de Presentes</h2>
-  <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">
+    <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">
       Ver nossa lista de presentes
     </a>
-  </div>
     <p>Se preferir, você pode nos presentear via Pix também:</p>
     <p><strong>Chave Pix:</strong> <span style="user-select:all;">15249877605</span></p>
   </section>
