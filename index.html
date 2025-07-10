@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriele & Matheus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap"
+    rel="stylesheet"
+  />
   <style>
     body {
       margin: 0;
@@ -17,7 +20,8 @@
       color: #333;
     }
 
-    .arabesco-topo, .arabesco-rodape {
+    .arabesco-topo,
+    .arabesco-rodape {
       position: absolute;
       width: 300px;
       z-index: 0;
@@ -57,7 +61,7 @@
       font-size: 1.5rem;
       line-height: 1.8;
       color: #5a2a2a;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
     .convite-texto p {
@@ -72,22 +76,41 @@
       text-align: center;
     }
 
+    /* Contagem regressiva marsala, maior */
     .contagem {
-      background-color: #800000;
+      background-color: #800000; /* marsala */
       color: white;
-      font-size: 2rem;
+      font-size: 3.5rem; /* maior */
+      font-weight: bold;
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
       margin: 2rem auto;
-      max-width: 500px;
+      max-width: 600px;
       border-radius: 16px;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Botão presente centralizado e grande */
+    .presentes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
     }
 
     .botao-presente {
@@ -95,13 +118,16 @@
       text-decoration: none;
       background-color: #c97c8d;
       color: white;
-      padding: 16px 32px;
+      padding: 24px 48px;
       border-radius: 12px;
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, background-color 0.3s ease;
       animation: pulse 2s infinite;
+      text-align: center;
+      max-width: 100%;
+      width: fit-content;
     }
 
     .botao-presente:hover {
@@ -114,18 +140,28 @@
     }
 
     @keyframes explode {
-      0% { transform: scale(1.1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(0.9); }
+      0% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(0.9);
+      }
     }
 
-    .rsvp, .presentes, .mapa {
+    .rsvp,
+    .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
       margin: 0 auto;
     }
 
-    input, select, textarea, button {
+    input,
+    select,
+    textarea,
+    button {
       width: 100%;
       margin: 0.5rem 0;
       padding: 0.8rem;
@@ -142,13 +178,15 @@
       transition: background 0.2s;
     }
 
-    button:hover, button:focus {
+    button:hover,
+    button:focus {
       background-color: #a84545;
     }
 
+    /* Caixa do mapa com fundo verde oliva */
     .mapa-container {
       position: relative;
-      background-color: #f5e6e7; /* rosa chá */
+      background-color: #556b2f; /* verde oliva */
       border-radius: 16px;
       padding: 1rem;
       margin-top: 1rem;
@@ -181,24 +219,43 @@
         padding: 1rem;
       }
       .contagem {
-        font-size: 1.4rem;
+        font-size: 2rem;
         padding: 1.2rem;
+      }
+      .botao-presente {
+        padding: 16px 32px;
+        font-size: 1.4rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo">
-  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
+  <img
+    src="FLOR.png"
+    alt="Arabesco Topo Direita"
+    class="arabesco-topo"
+  />
+  <img
+    src="FLOR.png"
+    alt="Arabesco Rodapé Esquerda"
+    class="arabesco-rodape"
+  />
 
   <header>
     <h1>Gabriele & Matheus</h1>
   </header>
 
   <section class="convite-texto">
-    <p>Com imensa alegria, junto de suas famílias, <strong style="color:#a94442">Gabriele & Matheus</strong> têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
-    <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
+    <p>
+      Com imensa alegria, junto de suas famílias,
+      <strong style="color: #a94442">Gabriele & Matheus</strong> têm o
+      prazer de convidar você para celebrar o início de uma nova jornada.
+    </p>
+    <p>
+      Nosso amor, com a bênção de Deus, será celebrado em um momento único e
+      especial, e será uma honra contar com sua presença para tornar este dia
+      ainda mais inesquecível.
+    </p>
     <div class="data">Sábado, 29 de novembro, às 16:30</div>
     <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
   </section>
@@ -209,43 +266,71 @@
 
   <section class="rsvp">
     <h2>Confirme sua presença</h2>
-    <form action="https://formsubmit.co/juicemolemole@gmail.com" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="number" name="acompanhantes" placeholder="Número de acompanhantes" min="0">
+    <form
+      action="https://formsubmit.co/juicemolemole@gmail.com"
+      method="POST"
+    >
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input
+        type="number"
+        name="acompanhantes"
+        placeholder="Número de acompanhantes"
+        min="0"
+      />
       <select name="presenca" required>
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="Confirmado">Confirmo minha presença</option>
         <option value="Nao">Infelizmente não poderei ir</option>
       </select>
-      <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
+      <textarea
+        name="mensagem"
+        placeholder="Deixe uma mensagem opcional"
+      ></textarea>
       <button type="submit">Enviar confirmação</button>
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="false" />
     </form>
   </section>
 
   <section class="presentes">
     <h2>Lista de Presentes</h2>
-    <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">
-      Ver nossa lista de presentes
-    </a>
+    <a
+      href="https://www.finalfeliz.de/gabriele-e-matheus-S2"
+      class="botao-presente"
+      target="_blank"
+      >Ver nossa lista de presentes</a
+    >
     <p>Se preferir, você pode nos presentear via Pix também:</p>
-    <p><strong>Chave Pix:</strong> <span style="user-select:all; color:#8b2e2e; font-weight:bold">15249877605</span></p>
+    <p>
+      <strong>Chave Pix:</strong>
+      <span
+        style="user-select: all; color: #8b2e2e; font-weight: bold"
+        >15249877605</span
+      >
+    </p>
   </section>
 
   <section class="mapa">
     <h2>Como chegar</h2>
     <div class="mapa-container">
-      <img src="flor-canto-superior.png" class="flor-mapa flor-top-right" alt="Flor canto superior direito">
-      <iframe 
+      <img
+        src="flor-canto-superior.png"
+        class="flor-mapa flor-top-right"
+        alt="Flor canto superior direito"
+      />
+      <iframe
         src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed"
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        title="Mapa Espaço Matos">
-      </iframe>
-      <img src="flor-canto-inferior.png" class="flor-mapa flor-bottom-left" alt="Flor canto inferior esquerdo">
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        title="Mapa Espaço Matos"
+      ></iframe>
+      <img
+        src="flor-canto-inferior.png"
+        class="flor-mapa flor-bottom-left"
+        alt="Flor canto inferior esquerdo"
+      />
     </div>
   </section>
 
@@ -253,28 +338,31 @@
 
   <script>
     function pad(num) {
-      return num < 10 ? "0" + num : num;
+      return num < 10 ? '0' + num : num;
     }
     function countdown() {
       const end = new Date('2025-11-29T16:30:00');
       const now = new Date();
       const diff = end - now;
-      const el = document.getElementById("countdown");
+      const el = document.getElementById('countdown');
       if (diff <= 0) {
-        el.innerText = "É hoje! 💍";
+        el.textContent = 'É hoje! 💍';
         return;
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-      el.innerText = `${days} dias, ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+      el.textContent = `${days} dias, ${pad(hours)}h ${pad(minutes)}m ${pad(
+        seconds
+      )}s`;
     }
     setInterval(countdown, 1000);
     countdown();
   </script>
 </body>
 </html>
+
 
 
 
