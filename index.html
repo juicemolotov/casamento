@@ -30,7 +30,7 @@
       bottom: 0;
       left: 0;
       width: 300px;
-      transform: scaleY(-1); /* apenas espelhamento vertical */
+      transform: scaleY(-1);
       z-index: 0;
     }
 
@@ -45,6 +45,35 @@
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
       color: #8b2e2e;
+    }
+
+    /* Contagem regressiva decorada marsala pulsando */
+    .contagem {
+      margin: 2rem auto;
+      max-width: 400px;
+      background-color: #800000;
+      border: 4px solid #b04a4a;
+      border-radius: 20px;
+      padding: 2rem;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      font-family: 'Crimson Text', serif;
+      box-shadow: 0 0 20px rgba(128, 0, 0, 0.7);
+      user-select: none;
+      letter-spacing: 2px;
+      animation: pulsar 2.5s infinite;
+    }
+
+    /* Animação de pulsar usada no botão e contagem */
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
     }
 
     .botao-presente {
@@ -67,15 +96,6 @@
       background-color: #a65f70;
       transform: scale(1.15);
       animation-play-state: paused;
-    }
-
-    @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
     }
 
     @keyframes explodir {
@@ -104,23 +124,6 @@
       font-size: 1.4rem;
       margin-top: 1rem;
     }
-
-    .contagem {
-  margin: 2rem auto;
-  max-width: 400px;
-  background-color: #800000; /* marsala escuro */
-  border: 4px solid #b04a4a; /* borda marsala clara */
-  border-radius: 20px;
-  padding: 2rem;
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  font-family: 'Crimson Text', serif;
-  box-shadow: 0 0 20px rgba(128, 0, 0, 0.7);
-  user-select: none;
-  letter-spacing: 2px;
-}
 
     .rsvp,
     .presentes,
@@ -177,7 +180,9 @@
         font-size: 1rem;
       }
       .contagem {
-        font-size: 1.1rem;
+        font-size: 1.6rem;
+        max-width: 90%;
+        padding: 1rem;
       }
       .arabesco-topo,
       .arabesco-rodape {
@@ -187,7 +192,6 @@
   </style>
 </head>
 <body>
-  <!-- Arabescos decorativos -->
   <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo" />
   <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape" />
 
@@ -289,24 +293,28 @@
     setInterval(countdown, 1000);
     countdown();
 
-    // Animação explode no clique do botão presente
-    document.querySelector('.botao-presente').addEventListener('click', function (e) {
-      e.preventDefault(); // para não abrir o link e ver só efeito
+    // Botão presente: explode no clique e abre link depois da animação
+    document.querySelector(".botao-presente").addEventListener("click", function (e) {
+      e.preventDefault();
 
       const botao = this;
-      botao.style.animation = 'explodir 0.4s forwards';
-      botao.style.pointerEvents = 'none';
+      const url = botao.href;
+
+      botao.style.animation = "explodir 0.4s forwards";
+      botao.style.pointerEvents = "none";
 
       setTimeout(() => {
-        // volta ao estado inicial
-        botao.style.animation = 'pulsar 2s infinite';
-        botao.style.opacity = '1';
-        botao.style.transform = 'scale(1)';
-        botao.style.pointerEvents = 'auto';
-      }, 600);
+        window.open(url, "_blank");
+        // Resetar estado do botão para permitir clicar novamente
+        botao.style.animation = "pulsar 2s infinite";
+        botao.style.opacity = "1";
+        botao.style.transform = "scale(1)";
+        botao.style.pointerEvents = "auto";
+      }, 400);
     });
   </script>
 </body>
 </html>
+
 
 
