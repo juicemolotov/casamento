@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriele & Matheus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Crimson Text', serif;
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-color: #f5f0e6;
+      color: #4d3b3b;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background-image: url('https://i.imgur.com/FtRUZ0K.png'); /* topo floral */
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #8b2e2e;
+    }
+    .convite-texto {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .data {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+    .contagem {
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .rsvp, .presentes, .mapa {
+      padding: 2rem 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-family: 'Crimson Text', serif;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #8b2e2e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover, button:focus {
+      background-color: #a84545;
+    }
+    footer {
+      background-image: url('https://i.imgur.com/z3K3oqR.png'); /* fundo floral inferior */
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: contain;
+      padding: 4rem 0;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+      .convite-texto, .rsvp, .presentes, .mapa {
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+      }
+      .contagem {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gabriele & Matheus</h1>
+  </header>
+
+  <section class="convite-texto">
+    <p>Com imensa alegria, junto de suas famílias, Gabriele & Matheus têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
+    <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
+    <div class="data">Sábado, 29 de novembro, às 16:30</div>
+    <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
+  </section>
+
+  <section class="contagem">
+    <div id="countdown"></div>
+  </section>
+
+  <section class="rsvp">
+    <h2>Confirme sua presença</h2>
+    <form action="https://formsubmit.co/juicemolemole@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="number" name="acompanhantes" placeholder="Número de acompanhantes" min="0">
+      <select name="presenca" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Confirmado">Confirmo minha presença</option>
+        <option value="Nao">Infelizmente não poderei ir</option>
+      </select>
+      <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
+      <button type="submit">Enviar confirmação</button>
+      <!-- Proteção contra spam -->
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </section>
+
+  <section class="presentes">
+    <h2>Lista de Presentes</h2>
+    <p>Estamos montando nossa lista na Magazine Luiza e adicionaremos o link em breve.</p>
+    <p>Se preferir, você pode nos presentear via Pix:</p>
+    <p><strong>Chave Pix:</strong> <span style="user-select:all;">15249877605</span></p>
+  </section>
+
+  <section class="mapa">
+    <h2>Como chegar</h2>
+    <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
+  </section>
+
+  <footer></footer>
+
+  <script>
+    function pad(num) {
+      return num < 10 ? "0" + num : num;
+    }
+    function countdown() {
+      const end = new Date('2025-11-29T16:30:00');
+      const now = new Date();
+      const diff = end - now;
+      const el = document.getElementById("countdown");
+      if (diff <= 0) {
+        el.innerText = "É hoje! 💍";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      el.innerText = `${days} dias, ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+    }
+    setInterval(countdown, 1000);
+    countdown();
+  </script>
+</body>
+</html>
