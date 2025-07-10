@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriele & Matheus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -51,16 +51,31 @@
       text-decoration: none;
       background-color: #c97c8d;
       color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 16px 36px; /* Aumentado */
+      border-radius: 10px; /* Leve aumento */
+      font-size: 1.4rem; /* Aumentado */
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Leve sombra mais forte */
       transition: background-color 0.3s ease;
+      display: inline-block;
+      animation: piscar 1.5s infinite alternate;
     }
 
     .botao-presente:hover {
       background-color: #a65f70;
+      animation-play-state: paused; /* Para não piscar no hover */
+    }
+
+    @keyframes piscar {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     .convite-texto {
@@ -85,13 +100,23 @@
       text-align: center;
     }
 
-    .rsvp, .presentes, .mapa {
+    .rsvp,
+    .presentes,
+    .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
       margin: 0 auto;
     }
 
-    input, select, textarea, button {
+    /* Centraliza texto e botão na seção de presentes */
+    .presentes {
+      text-align: center;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
       width: 100%;
       margin: 0.5rem 0;
       padding: 0.8rem;
@@ -108,7 +133,8 @@
       transition: background 0.2s;
     }
 
-    button:hover, button:focus {
+    button:hover,
+    button:focus {
       background-color: #a84545;
     }
 
@@ -122,32 +148,42 @@
       h1 {
         font-size: 2.1rem;
       }
-      .convite-texto, .rsvp, .presentes, .mapa {
+      .convite-texto,
+      .rsvp,
+      .presentes,
+      .mapa {
         padding: 1rem 0.5rem;
         font-size: 1rem;
       }
       .contagem {
         font-size: 1.1rem;
       }
-      .arabesco-topo, .arabesco-rodape {
+      .arabesco-topo,
+      .arabesco-rodape {
         width: 180px;
       }
     }
   </style>
 </head>
 <body>
-
   <!-- Arabescos decorativos corrigidos -->
-  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo">
-  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
+  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo" />
+  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape" />
 
   <header>
     <h1>Gabriele & Matheus</h1>
   </header>
 
   <section class="convite-texto">
-    <p>Com imensa alegria, junto de suas famílias, Gabriele & Matheus têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
-    <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
+    <p>
+      Com imensa alegria, junto de suas famílias, Gabriele & Matheus têm o
+      prazer de convidar você para celebrar o início de uma nova jornada.
+    </p>
+    <p>
+      Nosso amor, com a bênção de Deus, será celebrado em um momento único e
+      especial, e será uma honra contar com sua presença para tornar este dia
+      ainda mais inesquecível.
+    </p>
     <div class="data">Sábado, 29 de novembro, às 16:30</div>
     <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
   </section>
@@ -159,31 +195,53 @@
   <section class="rsvp">
     <h2>Confirme sua presença</h2>
     <form action="https://formsubmit.co/juicemolemole@gmail.com" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="number" name="acompanhantes" placeholder="Número de acompanhantes" min="0">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input
+        type="number"
+        name="acompanhantes"
+        placeholder="Número de acompanhantes"
+        min="0"
+      />
       <select name="presenca" required>
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="Confirmado">Confirmo minha presença</option>
         <option value="Nao">Infelizmente não poderei ir</option>
       </select>
-      <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
+      <textarea
+        name="mensagem"
+        placeholder="Deixe uma mensagem opcional"
+      ></textarea>
       <button type="submit">Enviar confirmação</button>
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="false" />
     </form>
   </section>
 
   <section class="presentes">
     <h2>Lista de Presentes</h2>
-    <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">
-      Ver nossa lista de presentes
-    </a>
+    <a
+      href="https://www.finalfeliz.de/gabriele-e-matheus-S2"
+      class="botao-presente"
+      target="_blank"
+      >Ver nossa lista de presentes</a
+    >
     <p>Se preferir, você pode nos presentear via Pix também:</p>
-    <p><strong>Chave Pix:</strong> <span style="user-select:all;">15249877605</span></p>
+    <p>
+      <strong>Chave Pix:</strong>
+      <span style="user-select: all">15249877605</span>
+    </p>
   </section>
 
   <section class="mapa">
     <h2>Como chegar</h2>
-    <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
+    <iframe
+      src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed"
+      width="100%"
+      height="300"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      title="Mapa Espaço Matos"
+    ></iframe>
   </section>
 
   <footer></footer>
@@ -193,7 +251,7 @@
       return num < 10 ? "0" + num : num;
     }
     function countdown() {
-      const end = new Date('2025-11-29T16:30:00');
+      const end = new Date("2025-11-29T16:30:00");
       const now = new Date();
       const diff = end - now;
       const el = document.getElementById("countdown");
@@ -212,5 +270,4 @@
   </script>
 </body>
 </html>
-
 
