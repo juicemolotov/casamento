@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriele & Matheus</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -31,6 +28,10 @@
       font-family: 'Great Vibes', cursive;
       font-size: 4rem;
       color: #8b2e2e;
+      margin: 0 auto;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
     }
 
     .convite-texto {
@@ -91,15 +92,9 @@
     }
 
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     .presentes {
@@ -139,28 +134,18 @@
     }
 
     @keyframes explode {
-      0% {
-        transform: scale(1.1);
-      }
-      50% {
-        transform: scale(1.3);
-      }
-      100% {
-        transform: scale(0.9);
-      }
+      0% { transform: scale(1.1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(0.9); }
     }
 
-    .rsvp,
-    .mapa {
+    .rsvp, .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
       margin: 0 auto;
     }
 
-    input,
-    select,
-    textarea,
-    button {
+    input, select, textarea, button {
       width: 100%;
       margin: 0.5rem 0;
       padding: 0.8rem;
@@ -177,8 +162,7 @@
       transition: background 0.2s;
     }
 
-    button:hover,
-    button:focus {
+    button:hover, button:focus {
       background-color: #a84545;
     }
 
@@ -226,24 +210,19 @@
       }
     }
   </style>
+</head>
+<body>
+
+  <header>
     <h1>Gabriele & Matheus</h1>
   </header>
 
   <section class="convite-texto">
-    <!-- Flores nos cantos da caixa branca -->
     <img src="2a555b52-9b5b-4be5-96a3-603b58795db0.png" alt="Flor topo direita" class="flor-topo-direita" />
     <img src="2a555b52-9b5b-4be5-96a3-603b58795db0.png" alt="Flor rodapé esquerda" class="flor-rodape-esquerda" />
 
-    <p>
-      Com imensa alegria, junto de suas famílias,
-      <strong style="color: #a94442">Gabriele & Matheus</strong> têm o
-      prazer de convidar você para celebrar o início de uma nova jornada.
-    </p>
-    <p>
-      Nosso amor, com a bênção de Deus, será celebrado em um momento único e
-      especial, e será uma honra contar com sua presença para tornar este dia
-      ainda mais inesquecível.
-    </p>
+    <p>Com imensa alegria, junto de suas famílias, <strong style="color: #a94442">Gabriele & Matheus</strong> têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
+    <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
     <div class="data">Sábado, 29 de novembro, às 16:30</div>
     <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
   </section>
@@ -270,11 +249,7 @@
 
   <section class="presentes">
     <h2>Lista de Presentes</h2>
-    <a
-      href="https://www.finalfeliz.de/gabriele-e-matheus-S2"
-      class="botao-presente"
-      target="_blank"
-    >Ver nossa lista de presentes</a>
+    <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">Ver nossa lista de presentes</a>
     <p>Se preferir, você pode nos presentear via Pix também:</p>
     <p><strong>Chave Pix:</strong> <span style="user-select: all; color: #8b2e2e; font-weight: bold">15249877605</span></p>
   </section>
@@ -283,10 +258,7 @@
     <h2>Como chegar</h2>
     <div class="mapa-container">
       <img src="flor-canto-superior.png" class="flor-mapa flor-top-right" alt="Flor canto superior direito" />
-      <iframe
-        src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"
-      ></iframe>
+      <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
       <img src="flor-canto-inferior.png" class="flor-mapa flor-bottom-left" alt="Flor canto inferior esquerdo" />
     </div>
   </section>
