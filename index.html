@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -53,6 +52,7 @@
     }
 
     .convite-texto {
+      position: relative;
       max-width: 800px;
       margin: 0 auto;
       padding: 2rem;
@@ -77,11 +77,28 @@
       text-align: center;
     }
 
-    /* Contagem regressiva marsala, maior */
+    .flor-topo-direita,
+    .flor-rodape-esquerda {
+      position: absolute;
+      width: 120px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .flor-topo-direita {
+      top: -20px;
+      right: -20px;
+    }
+
+    .flor-rodape-esquerda {
+      bottom: -20px;
+      left: -20px;
+    }
+
     .contagem {
-      background-color: #800000; /* marsala */
+      background-color: #800000;
       color: white;
-      font-size: 3.5rem; /* maior */
+      font-size: 3.5rem;
       font-weight: bold;
       text-align: center;
       padding: 3rem 2rem;
@@ -103,7 +120,6 @@
       }
     }
 
-    /* Botão presente centralizado e grande */
     .presentes {
       display: flex;
       flex-direction: column;
@@ -184,10 +200,9 @@
       background-color: #a84545;
     }
 
-    /* Caixa do mapa com fundo verde oliva */
     .mapa-container {
       position: relative;
-      background-color: #556b2f; /* verde oliva */
+      background-color: #556b2f;
       border-radius: 16px;
       padding: 1rem;
       margin-top: 1rem;
@@ -231,22 +246,18 @@
   </style>
 </head>
 <body>
-  <img
-    src="FLOR.png"
-    alt="Arabesco Topo Direita"
-    class="arabesco-topo"
-  />
-  <img
-    src="FLOR.png"
-    alt="Arabesco Rodapé Esquerda"
-    class="arabesco-rodape"
-  />
+  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo" />
+  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape" />
 
   <header>
     <h1>Gabriele & Matheus</h1>
   </header>
 
   <section class="convite-texto">
+    <!-- Flores nos cantos da caixa branca -->
+    <img src="2a555b52-9b5b-4be5-96a3-603b58795db0.png" alt="Flor topo direita" class="flor-topo-direita" />
+    <img src="2a555b52-9b5b-4be5-96a3-603b58795db0.png" alt="Flor rodapé esquerda" class="flor-rodape-esquerda" />
+
     <p>
       Com imensa alegria, junto de suas famílias,
       <strong style="color: #a94442">Gabriele & Matheus</strong> têm o
@@ -267,26 +278,15 @@
 
   <section class="rsvp">
     <h2>Confirme sua presença</h2>
-    <form
-      action="https://formsubmit.co/juicemolemole@gmail.com"
-      method="POST"
-    >
+    <form action="https://formsubmit.co/juicemolemole@gmail.com" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required />
-      <input
-        type="number"
-        name="acompanhantes"
-        placeholder="Número de acompanhantes"
-        min="0"
-      />
+      <input type="number" name="acompanhantes" placeholder="Número de acompanhantes" min="0" />
       <select name="presenca" required>
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="Confirmado">Confirmo minha presença</option>
         <option value="Nao">Infelizmente não poderei ir</option>
       </select>
-      <textarea
-        name="mensagem"
-        placeholder="Deixe uma mensagem opcional"
-      ></textarea>
+      <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
       <button type="submit">Enviar confirmação</button>
       <input type="hidden" name="_captcha" value="false" />
     </form>
@@ -298,40 +298,20 @@
       href="https://www.finalfeliz.de/gabriele-e-matheus-S2"
       class="botao-presente"
       target="_blank"
-      >Ver nossa lista de presentes</a
-    >
+    >Ver nossa lista de presentes</a>
     <p>Se preferir, você pode nos presentear via Pix também:</p>
-    <p>
-      <strong>Chave Pix:</strong>
-      <span
-        style="user-select: all; color: #8b2e2e; font-weight: bold"
-        >15249877605</span
-      >
-    </p>
+    <p><strong>Chave Pix:</strong> <span style="user-select: all; color: #8b2e2e; font-weight: bold">15249877605</span></p>
   </section>
 
   <section class="mapa">
     <h2>Como chegar</h2>
     <div class="mapa-container">
-      <img
-        src="flor-canto-superior.png"
-        class="flor-mapa flor-top-right"
-        alt="Flor canto superior direito"
-      />
+      <img src="flor-canto-superior.png" class="flor-mapa flor-top-right" alt="Flor canto superior direito" />
       <iframe
         src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed"
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        title="Mapa Espaço Matos"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"
       ></iframe>
-      <img
-        src="flor-canto-inferior.png"
-        class="flor-mapa flor-bottom-left"
-        alt="Flor canto inferior esquerdo"
-      />
+      <img src="flor-canto-inferior.png" class="flor-mapa flor-bottom-left" alt="Flor canto inferior esquerdo" />
     </div>
   </section>
 
@@ -354,15 +334,14 @@
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-      el.textContent = `${days} dias, ${pad(hours)}h ${pad(minutes)}m ${pad(
-        seconds
-      )}s`;
+      el.textContent = `${days} dias, ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
     }
     setInterval(countdown, 1000);
     countdown();
   </script>
 </body>
 </html>
+
 
 
 
