@@ -13,25 +13,25 @@
       background-repeat: repeat;
       background-size: contain;
       background-attachment: fixed;
-      position: relative;
       font-family: 'Crimson Text', serif;
+      color: #333;
+    }
+
+    .arabesco-topo, .arabesco-rodape {
+      position: absolute;
+      width: 300px;
+      z-index: 0;
     }
 
     .arabesco-topo {
-      position: absolute;
       top: 0;
       right: 0;
-      width: 300px;
-      z-index: 0;
+      transform: scaleX(-1);
     }
 
     .arabesco-rodape {
-      position: absolute;
       bottom: 0;
       left: 0;
-      width: 300px;
-      transform: scaleX(-1) scaleY(-1);
-      z-index: 0;
     }
 
     header {
@@ -43,49 +43,80 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #8b2e2e;
     }
 
     .convite-texto {
       max-width: 800px;
       margin: 0 auto;
-      padding: 1rem 2rem;
-      text-align: justify;
-      font-size: 1.4rem;
+      padding: 2rem;
+      background: #fff8f8;
+      border-radius: 16px;
+      text-align: center;
+      font-size: 1.5rem;
       line-height: 1.8;
-      background: rgba(255,255,255,0.4);
-      border-radius: 12px;
-      color: #3b2b2b;
+      color: #5a2a2a;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
-    .convite-texto .data {
-      text-align: center;
-      font-size: 1.6rem;
+    .convite-texto p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .data {
       font-weight: bold;
+      font-size: 1.6rem;
       color: #8b2e2e;
-      margin-top: 1rem;
+      text-align: center;
     }
 
     .contagem {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      background-color: #800000;
+      color: white;
       font-size: 2rem;
-      background-color: #f8e6e0;
-      color: #8b2e2e;
-      padding: 1.5rem;
+      text-align: center;
+      padding: 2rem;
       margin: 2rem auto;
-      border-radius: 20px;
       max-width: 500px;
-      animation: pulseBox 2s infinite;
+      border-radius: 16px;
+      animation: pulse 2s infinite;
     }
 
-    @keyframes pulseBox {
+    @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
+    }
+
+    .botao-presente {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #c97c8d;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .botao-presente:hover {
+      transform: scale(1.1);
+      background-color: #a65f70;
+    }
+
+    .botao-presente:active {
+      animation: explode 0.4s forwards;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1.1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(0.9); }
     }
 
     .rsvp, .presentes, .mapa {
@@ -94,45 +125,12 @@
       margin: 0 auto;
     }
 
-    .botao-presente {
-      text-decoration: none;
-      background-color: #c97c8d;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      animation: pulse 2s infinite;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    .botao-presente:hover {
-      transform: scale(1.15);
-      background-color: #a65f70;
-    }
-
-    .botao-presente:active {
-      animation: explode 0.5s forwards;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes explode {
-      0% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(2); opacity: 0; }
-    }
-
     input, select, textarea, button {
       width: 100%;
       margin: 0.5rem 0;
       padding: 0.8rem;
       font-size: 1rem;
+      font-family: 'Crimson Text', serif;
       box-sizing: border-box;
     }
 
@@ -141,33 +139,56 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: background 0.2s;
     }
 
-    button:hover {
+    button:hover, button:focus {
       background-color: #a84545;
     }
 
-    .mapa-box {
-      background-color: #f8e6e0;
+    .mapa-container {
+      position: relative;
+      background-color: #f5e6e7; /* rosa chá */
       border-radius: 16px;
       padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 800px;
-      margin: 2rem auto;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .mapa h2 {
-      text-align: center;
-      color: #8b2e2e;
-      margin-bottom: 1rem;
+    .flor-mapa {
+      position: absolute;
+      width: 80px;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    footer {
-      padding: 4rem 0;
+    .flor-top-right {
+      top: -20px;
+      right: -20px;
+    }
+
+    .flor-bottom-left {
+      bottom: -20px;
+      left: -20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .convite-texto {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+      .contagem {
+        font-size: 1.4rem;
+        padding: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo">
   <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
 
@@ -176,7 +197,7 @@
   </header>
 
   <section class="convite-texto">
-    <p>Com imensa alegria, junto de suas famílias, <strong style="color:#8b2e2e;">Gabriele & Matheus</strong> têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
+    <p>Com imensa alegria, junto de suas famílias, <strong style="color:#a94442">Gabriele & Matheus</strong> têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
     <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
     <div class="data">Sábado, 29 de novembro, às 16:30</div>
     <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
@@ -208,13 +229,23 @@
       Ver nossa lista de presentes
     </a>
     <p>Se preferir, você pode nos presentear via Pix também:</p>
-    <p><strong>Chave Pix:</strong> <span style="user-select:all;">15249877605</span></p>
+    <p><strong>Chave Pix:</strong> <span style="user-select:all; color:#8b2e2e; font-weight:bold">15249877605</span></p>
   </section>
 
   <section class="mapa">
-    <div class="mapa-box">
-      <h2>Como chegar</h2>
-      <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
+    <h2>Como chegar</h2>
+    <div class="mapa-container">
+      <img src="flor-canto-superior.png" class="flor-mapa flor-top-right" alt="Flor canto superior direito">
+      <iframe 
+        src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed"
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        title="Mapa Espaço Matos">
+      </iframe>
+      <img src="flor-canto-inferior.png" class="flor-mapa flor-bottom-left" alt="Flor canto inferior esquerdo">
     </div>
   </section>
 
