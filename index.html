@@ -13,10 +13,21 @@
       background-repeat: repeat;
       background-size: contain;
       background-attachment: fixed;
-      position: relative;
+      font-family: 'Crimson Text', serif;
     }
-
-    /* Arabescos posicionados corretamente */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background-image: url('fundo-floral.png');
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #8b2e2e;
+    }
     .arabesco-topo {
       position: absolute;
       top: 0;
@@ -24,124 +35,20 @@
       width: 300px;
       z-index: 0;
     }
-
     .arabesco-rodape {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 300px;
-      transform: scaleY(-1); /* apenas espelhamento vertical */
+      transform: scale(-1, -1); /* espelhado horizontal e vertical */
       z-index: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #8b2e2e;
-    }
-
-    .botao-presente {
-      text-decoration: none;
-      background-color: #c97c8d;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-    }
-
-    .botao-presente:hover {
-      background-color: #a65f70;
-    }
-
-    .convite-texto {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 1rem;
-      text-align: center;
-      font-size: 1.2rem;
-      z-index: 1;
-      position: relative;
-    }
-
-    .data {
-      font-weight: bold;
-      font-size: 1.4rem;
-      margin-top: 1rem;
-    }
-
-    .contagem {
-      margin: 2rem 0;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    .rsvp, .presentes, .mapa {
-      padding: 2rem 1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    input, select, textarea, button {
-      width: 100%;
-      margin: 0.5rem 0;
-      padding: 0.8rem;
-      font-size: 1rem;
-      font-family: 'Crimson Text', serif;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #8b2e2e;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    button:hover, button:focus {
-      background-color: #a84545;
-    }
-
-    footer {
-      padding: 4rem 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.1rem;
-      }
-      .convite-texto, .rsvp, .presentes, .mapa {
-        padding: 1rem 0.5rem;
-        font-size: 1rem;
-      }
-      .contagem {
-        font-size: 1.1rem;
-      }
-      .arabesco-topo, .arabesco-rodape {
-        width: 180px;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Arabescos decorativos corrigidos -->
-  <img src="FLOR.png" alt="Arabesco Topo Direita" class="arabesco-topo">
-  <img src="FLOR.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
-
-  <header>
+  <!-- Arabescos decorativos -->
+  <img src="FLOR-transparente.png" alt="Arabesco Topo Direita" class="arabesco-topo">
+  <img src="FLOR-transparente.png" alt="Arabesco Rodapé Esquerda" class="arabesco-rodape">
     <h1>Gabriele & Matheus</h1>
   </header>
 
