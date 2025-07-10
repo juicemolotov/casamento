@@ -13,8 +13,8 @@
       background-repeat: repeat;
       background-size: contain;
       background-attachment: fixed;
+      position: relative;
       font-family: 'Crimson Text', serif;
-      color: #4b2c2c;
     }
 
     .arabesco-topo {
@@ -49,105 +49,121 @@
 
     .convite-texto {
       max-width: 800px;
-      margin: 0 auto 2rem;
-      padding: 2rem;
-      text-align: center;
-      font-size: 1.5rem;
-      line-height: 1.9;
-      background-color: #fdf6f6;
-      border-radius: 16px;
-      box-shadow: 0 8px 18px rgba(139, 46, 46, 0.15);
-    }
-
-    .convite-texto p {
-      margin-bottom: 1.8rem;
-    }
-
-    .convite-texto strong,
-    .convite-texto .destaque {
-      color: #8b2e2e;
-      font-weight: 600;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      text-align: justify;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.4);
+      border-radius: 12px;
+      color: #3b2b2b;
     }
 
     .convite-texto .data {
-      font-weight: bold;
+      text-align: center;
       font-size: 1.6rem;
+      font-weight: bold;
       color: #8b2e2e;
       margin-top: 1rem;
     }
 
     .contagem {
-      margin: 2rem auto;
-      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      max-width: 400px;
-      background-color: #8b2e2e;
-      color: white;
+      font-size: 2rem;
+      background-color: #f8e6e0;
+      color: #8b2e2e;
       padding: 1.5rem;
+      margin: 2rem auto;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
+      max-width: 500px;
+      animation: pulseBox 2s infinite;
     }
 
-    @keyframes pulse {
+    @keyframes pulseBox {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
-    }
-
-    .botao-presente {
-      display: inline-block;
-      text-decoration: none;
-      background-color: #c97c8d;
-      color: white;
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, background-color 0.3s;
-      animation: pulse 2s infinite;
-    }
-
-    .botao-presente:hover {
-      transform: scale(1.1);
-      background-color: #a65f70;
-    }
-
-    .botao-presente:active {
-      animation: explode 0.4s forwards;
-    }
-
-    @keyframes explode {
-      0% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1.5); opacity: 0; }
     }
 
     .rsvp, .presentes, .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
       margin: 0 auto;
+    }
+
+    .botao-presente {
+      text-decoration: none;
+      background-color: #c97c8d;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .botao-presente:hover {
+      transform: scale(1.15);
+      background-color: #a65f70;
+    }
+
+    .botao-presente:active {
+      animation: explode 0.5s forwards;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #8b2e2e;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a84545;
+    }
+
+    .mapa-box {
+      background-color: #f8e6e0;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .mapa h2 {
       text-align: center;
+      color: #8b2e2e;
+      margin-bottom: 1rem;
     }
 
     footer {
       padding: 4rem 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .convite-texto {
-        font-size: 1.2rem;
-        padding: 1.5rem;
-      }
-      .contagem {
-        font-size: 1.5rem;
-        padding: 1rem;
-      }
     }
   </style>
 </head>
@@ -160,18 +176,30 @@
   </header>
 
   <section class="convite-texto">
-    <p>
-      Com imensa alegria, junto de suas famílias, <span class="destaque">Gabriele & Matheus</span> têm o prazer de convidar você para celebrar o início de uma nova jornada.
-    </p>
-    <p>
-      Nosso amor, com a bênção de Deus, será celebrado em um momento <strong>único e especial</strong>, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.
-    </p>
-    <div class="data">📅 Sábado, <strong>29 de novembro</strong>, às <strong>16:30</strong></div>
-    <div class="data">📍 Espaço Matos, <strong>R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</strong></div>
+    <p>Com imensa alegria, junto de suas famílias, <strong style="color:#8b2e2e;">Gabriele & Matheus</strong> têm o prazer de convidar você para celebrar o início de uma nova jornada.</p>
+    <p>Nosso amor, com a bênção de Deus, será celebrado em um momento único e especial, e será uma honra contar com sua presença para tornar este dia ainda mais inesquecível.</p>
+    <div class="data">Sábado, 29 de novembro, às 16:30</div>
+    <div class="data">Espaço Matos, R. Carlos Dias Ribeiro, 729 – Lagoa Santa – MG</div>
   </section>
 
   <section class="contagem">
     <div id="countdown"></div>
+  </section>
+
+  <section class="rsvp">
+    <h2>Confirme sua presença</h2>
+    <form action="https://formsubmit.co/juicemolemole@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="number" name="acompanhantes" placeholder="Número de acompanhantes" min="0">
+      <select name="presenca" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Confirmado">Confirmo minha presença</option>
+        <option value="Nao">Infelizmente não poderei ir</option>
+      </select>
+      <textarea name="mensagem" placeholder="Deixe uma mensagem opcional"></textarea>
+      <button type="submit">Enviar confirmação</button>
+      <input type="hidden" name="_captcha" value="false">
+    </form>
   </section>
 
   <section class="presentes">
@@ -184,8 +212,10 @@
   </section>
 
   <section class="mapa">
-    <h2>Como chegar</h2>
-    <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
+    <div class="mapa-box">
+      <h2>Como chegar</h2>
+      <iframe src="https://www.google.com/maps?q=R.+Carlos+Dias+Ribeiro,+729,+Lagoa+Santa,+MG&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Espaço Matos"></iframe>
+    </div>
   </section>
 
   <footer></footer>
@@ -215,8 +245,6 @@
 </body>
 </html>
 
-</body>
-</html>
 
 
 
