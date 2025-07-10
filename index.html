@@ -24,13 +24,35 @@
       align-items: center;
     }
     header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-image: url('fundo-floral.png'); /* topo floral */
+      /* Roseiral no topo */
+    .fundo-floral-topo {
+      width: 100%;
+      height: 200px;
+      background-image: url('fundo-floral.png');
       background-repeat: no-repeat;
-      background-position: top center;
       background-size: contain;
+      background-position: top center;
     }
+
+    /* Roseiral no rodapé, espelhado */
+    .fundo-floral-rodape {
+      width: 100%;
+      height: 200px;
+      background-image: url('fundo-floral.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom center;
+      transform: scaleY(-1); /* espelha verticalmente */
+    }
+
+    /* Conteúdo centralizado no meio da página */
+    .conteudo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
