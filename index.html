@@ -7,13 +7,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text&display=swap" rel="stylesheet">
   <style>
   
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-  margin: 0;
-  padding: 0;
-  background-image: url('textura-de-gesso-cartonado-sepia.jpg');
-  background-repeat: repeat; /* ou no-repeat se quiser usar uma só */
-  background-size: contain;    /* ou "contain" ou "auto" dependendo do efeito */
-  background-attachment: fixed; /* opcional - para fundo fixo */
+      background-image: url('textura-de-gesso-cartonato-sepia.jpg');
+      background-size: cover;           /* Cobre a tela toda */
+      background-repeat: no-repeat;     /* Não repete a imagem */
+      background-position: center;      /* Centraliza a imagem */
+      background-attachment: fixed;     /* Mantém o fundo fixo ao rolar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     header {
       text-align: center;
