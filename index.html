@@ -76,7 +76,7 @@
     .flor-rodape-esquerda {
       bottom: -20px;
       left: -20px;
-      transform: scale(-1, -1); /* vira horizontalmente a flor esquerda */
+      transform: scale(-1, -1);
     }
 
     .contagem {
@@ -140,6 +140,19 @@
       100% { transform: scale(0.9); }
     }
 
+    .pix-destaque {
+      background-color: #fff1f1;
+      padding: 1rem 1.5rem;
+      border: 2px dashed #8b2e2e;
+      border-radius: 12px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #8b2e2e;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      user-select: all;
+    }
+
     .rsvp, .mapa {
       padding: 2rem 1rem;
       max-width: 700px;
@@ -191,7 +204,7 @@
     .flor-bottom-left {
       bottom: -20px;
       left: -20px;
-      transform: scale(-1, -1); /* vira horizontalmente a flor esquerda do mapa */
+      transform: scale(-1, -1);
     }
 
     @media (max-width: 600px) {
@@ -208,6 +221,9 @@
       }
       .botao-presente {
         padding: 16px 32px;
+        font-size: 1.4rem;
+      }
+      .pix-destaque {
         font-size: 1.4rem;
       }
     }
@@ -253,7 +269,7 @@
     <h2>Lista de Presentes</h2>
     <a href="https://www.finalfeliz.de/gabriele-e-matheus-S2" class="botao-presente" target="_blank">Ver nossa lista de presentes</a>
     <p>Se preferir, você pode nos presentear via Pix também:</p>
-    <p><strong>Chave Pix:</strong> <span style="user-select: all; color: #8b2e2e; font-weight: bold">15249877605</span></p>
+    <div class="pix-destaque">Chave Pix: 15249877605</div>
   </section>
 
   <section class="mapa">
@@ -291,6 +307,7 @@
   </script>
 </body>
 </html>
+
 
 
 
